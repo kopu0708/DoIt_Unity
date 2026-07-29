@@ -21,5 +21,8 @@
   
 - StageData 스크립트를 짜면서 'public Vector2 CameraLimitMin => cameraLimitMin' 이 부분이 무슨 역할인지 몰랐음
   다른 스크립트에서 데이터를 읽을 수 있게 해주는 읽기 전용 프로퍼티를 식 본문 멤버로 쓴 거였다. 난 왜 람다식이 나오는가 했었는데
-  
+
+## 다음에 알아볼 것
+- 새 Input System: PlayerInput 컴포넌트의 Behavior 옵션 차이, Input Actions 에셋 구조
+
   -----

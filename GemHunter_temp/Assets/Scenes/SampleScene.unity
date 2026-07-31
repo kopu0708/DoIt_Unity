@@ -307,9 +307,10 @@ GameObject:
   - component: {fileID: 553741269}
   - component: {fileID: 553741268}
   - component: {fileID: 553741270}
+  - component: {fileID: 553741271}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -560,8 +561,46 @@ MonoBehaviour:
     criticalChance: 0.05
     criticlaMultiplier: 2
     MaxHp: 100
-    currenHp: 100
+    currentHp: 0
     evasion: 0.05
+  middlePoint: {fileID: 1310691814}
+--- !u!70 &553741271
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553741263}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.07, y: 0.65}
+  m_Size: {x: 1.1, y: 1.5}
+  m_Direction: 0
 --- !u!1 &557263800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1006,6 +1045,8 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 1682498285235524163, guid: ee44a818c9a92d743bcb0cb7f182f85d, type: 3}
   EnemyCount: 10
+  parentTransform: {fileID: 557263804}
+  target: {fileID: 553741270}
 --- !u!4 &1266125820
 Transform:
   m_ObjectHideFlags: 0
@@ -8123,6 +8164,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 557263804}
     m_Modifications:
+    - target: {fileID: 2557425392737676189, guid: 66c8c87205b5c354eb30ded8c0e79298, type: 3}
+      propertyPath: entity
+      value: 
+      objectReference: {fileID: 553741270}
     - target: {fileID: 5423181501484219761, guid: 66c8c87205b5c354eb30ded8c0e79298, type: 3}
       propertyPath: target
       value: 

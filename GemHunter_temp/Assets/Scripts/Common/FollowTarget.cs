@@ -8,6 +8,10 @@ public class FollowTarget : MonoBehaviour
     [SerializeField]
     private bool x, y, z; // 추적할 축(x, y, z 개별 on/off)
 
+    public void SetTarget(Transform target)
+    {
+        this.target = target;
+    }
     private void Update()
     {
         if (target == null) return;  // 방어 코드 

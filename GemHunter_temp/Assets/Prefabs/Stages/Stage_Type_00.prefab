@@ -2138,7 +2138,7 @@ GameObject:
   - component: {fileID: 2205534042072876100}
   m_Layer: 0
   m_Name: Walls
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7766,7 +7766,7 @@ GameObject:
   - component: {fileID: 1579309288022969511}
   m_Layer: 0
   m_Name: SideWalls
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

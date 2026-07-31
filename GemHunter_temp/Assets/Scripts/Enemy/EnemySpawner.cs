@@ -10,10 +10,16 @@ public class EnemySpawner : MonoBehaviour
     private GameObject[] enemyPrefabs;
     [SerializeField]
     private int EnemyCount = 10;
+    [SerializeField]
+    private Transform parentTransform;
+    [SerializeField]
+    private EntityBase target;
 
     private Vector3 offset = new Vector3(0.5f, 0.5f, 0);
     private List<Vector3> possibleTiles = new List<Vector3>();
 
+    public static List<EntityBase> Enemies { get; private set; } =
+        new List<EntityBase>();  // 플레이어가 공격할 목표를 리스트로 저장 외부에서 쉽게 접근 가능하게 static으로 선언 
     private void Awake()
     {
         //Tilemap의 Bounds 재설정(맵을 수정할 때 Bounds가 변경되지 않는 문제 해결)
@@ -27,8 +33,11 @@ public class EnemySpawner : MonoBehaviour
             int type = Random.Range(0, enemyPrefabs.Length);
             int index = Random.Range(0, possibleTiles.Count);
 
-            Instantiate(enemyPrefabs[type], possibleTiles[index],
+            GameObject clone = Instantiate(enemyPrefabs[type], possibleTiles[index],
                 Quaternion.identity, transform); //그냥 회전 안 시키고 원본 각도 그대로 생성
+            clone.GetComponent<EnemyBase>().Initialize(parentTransform);  // 적 스폰에 Initialize 호출 
+            clone.GetComponent<EnemyFSM>().Setup(target);
+            Enemies.Add(clone.GetComponent<EntityBase>()); //적이 추가되면 리스트에 추가
         }
     }
 

@@ -177,6 +177,7 @@ GameObject:
   - component: {fileID: 6009137997520815697}
   - component: {fileID: 2445332122678794398}
   - component: {fileID: 5423181501484219761}
+  - component: {fileID: 2557425392737676189}
   m_Layer: 5
   m_Name: HP
   m_TagString: Untagged
@@ -255,3 +256,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FollowTargetUI
   target: {fileID: 0}
+--- !u!114 &2557425392737676189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7807364304789348225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6129d4631a90514b9bd44966ea8439d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIHP
+  image: {fileID: 5550959839445357715}
+  entity: {fileID: 0}

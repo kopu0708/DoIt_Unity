@@ -38,11 +38,11 @@ public class PlayerBase : EntityBase
             }
         }
 
-        if(Target != null)
+        if(Target != null) // 타겟이 있다면 SetTarget메서드 호출 
         {
             targetMark.SetTarget(Target.transform);
-            targetMark.transform.position = Target.transform.position;
-            targetMark.gameObject.SetActive(true);
+            targetMark.transform.position = Target.transform.position; //targetMark의 오브젝트 위치를 Target위치로 설정 
+            targetMark.gameObject.SetActive(true); // 월드에 출력 
         }
     }
 }

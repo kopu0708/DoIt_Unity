@@ -28,6 +28,9 @@ public class PlayerController : MonoBehaviour
         playerRenderer.OnFootStepEffect(playerBase.IsMoved);
         // 플레이어 이동
         movement2D.MoveTo(moveInput);
+
+        // 목표 방향으로 플레이어 무기 회전 
+        playerRenderer.LookRotation(playerBase);
     }
 
     public void OnMove(InputAction.CallbackContext context)

@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 5858046046640593804}
   - component: {fileID: 5835390902799671080}
   - component: {fileID: 6176468019887341265}
+  - component: {fileID: 7091121112164314417}
   m_Layer: 0
   m_Name: Enemy_00_RedGem
   m_TagString: Untagged
@@ -220,6 +221,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFSM
   projectilePrefab: {fileID: 6921219697684148368, guid: 53b4c3812ae4bdd43824abb1838e52ff, type: 3}
   projectileSpawnPoint: {fileID: 6430974270506814600}
+--- !u!70 &7091121112164314417
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682498285235524163}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.55}
+  m_Size: {x: 0.6, y: 0.9}
+  m_Direction: 0
 --- !u!1 &4122869965832842880
 GameObject:
   m_ObjectHideFlags: 0

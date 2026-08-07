@@ -21,7 +21,8 @@ public class EnemyBase : EntityBase
     }
     protected override void Setup()
     {
-        stats.MaxHp = 100 + 50 * (stats.level - 1); // 기본 100 레벨당 50 추가 
+        // 기본 체력은 DefaultValue에 할당하므로 추가 체력(BonusValue)만 설정
+        Stats.GetStat(StatType.HP).BonusValue = 50 * (Stats.level - 1);
         base.Setup();
     }
 }

@@ -119,6 +119,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &116341600
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 116341601}
+  m_Layer: 0
+  m_Name: SkillSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &116341601
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116341600}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.34, y: 0.055, z: 0}
+  m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 0.6666667}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 702693649}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1839735485 &159548828 stripped
 Tilemap:
   m_CorrespondingSourceObject: {fileID: 1025238568449733497, guid: c1515fb95d039b146877715b6335e81c, type: 3}
@@ -308,6 +339,8 @@ GameObject:
   - component: {fileID: 553741268}
   - component: {fileID: 553741270}
   - component: {fileID: 553741271}
+  - component: {fileID: 553741273}
+  - component: {fileID: 553741272}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -556,6 +589,43 @@ MonoBehaviour:
   stats:
     level: 1
     exp: 0
+    currentHP:
+      statType: 4
+      maxValue: 9999
+      minValue: 0
+      defaultValue: 100
+      bonusValue: 0
+    stats:
+    - statType: 0
+      maxValue: 9999
+      minValue: 1
+      defaultValue: 25
+      bonusValue: 0
+    - statType: 1
+      maxValue: 2.5
+      minValue: 0.5
+      defaultValue: 2.5
+      bonusValue: 0
+    - statType: 2
+      maxValue: 1
+      minValue: 0
+      defaultValue: 0.05
+      bonusValue: 0
+    - statType: 3
+      maxValue: 4
+      minValue: 1
+      defaultValue: 2
+      bonusValue: 0
+    - statType: 4
+      maxValue: 9999
+      minValue: 0
+      defaultValue: 100
+      bonusValue: 0
+    - statType: 5
+      maxValue: 1
+      minValue: 0
+      defaultValue: 0.05
+      bonusValue: 0
     damage: 25
     cooldownTime: 2.5
     criticalChance: 0.05
@@ -602,6 +672,33 @@ CapsuleCollider2D:
   m_Offset: {x: -0.07, y: 0.65}
   m_Size: {x: 1.1, y: 1.5}
   m_Direction: 0
+--- !u!114 &553741272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553741263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c2c3bb28e46c89418d4ba12bdad18bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkillGad
+  projectile: {fileID: 7268328737342387253, guid: 861e63d309fc7244389d44f030fcc1f6, type: 3}
+--- !u!114 &553741273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553741263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3d98e91500d1424dbd08d3b189baf47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SkillSystem
+  skillGad: {fileID: 553741272}
+  skillSpawnPoint: {fileID: 116341601}
 --- !u!1 &557263800
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,7 +931,8 @@ Transform:
   m_LocalPosition: {x: -0.04, y: 0.27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 116341601}
   m_Father: {fileID: 1006083600}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &702693650
@@ -6417,6 +6515,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5706285693108279618, guid: c1515fb95d039b146877715b6335e81c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7337293471341012779, guid: c1515fb95d039b146877715b6335e81c, type: 3}
       propertyPath: m_Size.x
       value: 20
@@ -8378,8 +8480,8 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 1417859956350214806}
-  - {fileID: 1720177834}
   - {fileID: 553741264}
+  - {fileID: 1720177834}
   - {fileID: 1266125820}
   - {fileID: 557263804}
   - {fileID: 1677926959}

@@ -42,7 +42,7 @@ public class EnemyFSM : MonoBehaviour
 
     private IEnumerator Attack()
     {
-        var wait = new WaitForSeconds(owner.Stats.cooldownTime); //쿨타임이 돌때마다.
+        var wait = new WaitForSeconds(owner.Stats.GetStat(StatType.CooldownTime).Value); //쿨타임이 돌때마다.
 
         while (true)
         {
@@ -51,7 +51,8 @@ public class EnemyFSM : MonoBehaviour
             Vector3 target = owner.Target.MiddlePoint;  // 타겟의 중간 지점으로 
             GameObject clone = Instantiate(projectilePrefab); // 프리팹을 생성해 
             clone.transform.position = projectileSpawnPoint.position; // 직선으로 날린다. 
-            clone.GetComponent<EnemyProjectile>().Setup(target, owner.Stats.damage); //그를 위해서 Setup메소드 호출 
+            clone.GetComponent<EnemyProjectile>().Setup(target,
+                owner.Stats.GetStat(StatType.Damage).Value); //그를 위해서 Setup메소드 호출 
         }
     }
 }

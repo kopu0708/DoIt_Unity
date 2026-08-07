@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 7091121112164314417}
   m_Layer: 0
   m_Name: Enemy_00_RedGem
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -197,6 +197,43 @@ MonoBehaviour:
   stats:
     level: 1
     exp: 0
+    currentHP:
+      statType: 4
+      maxValue: 9999
+      minValue: 0
+      defaultValue: 100
+      bonusValue: 0
+    stats:
+    - statType: 0
+      maxValue: 9999
+      minValue: 1
+      defaultValue: 25
+      bonusValue: 0
+    - statType: 1
+      maxValue: 9999
+      minValue: 0.2
+      defaultValue: 1.5
+      bonusValue: 0
+    - statType: 2
+      maxValue: 1
+      minValue: 0
+      defaultValue: 0.05
+      bonusValue: 0
+    - statType: 3
+      maxValue: 9999
+      minValue: 0
+      defaultValue: 100
+      bonusValue: 0
+    - statType: 4
+      maxValue: 9999
+      minValue: 0
+      defaultValue: 100
+      bonusValue: 0
+    - statType: 5
+      maxValue: 0.9
+      minValue: 0
+      defaultValue: 0.05
+      bonusValue: 0
     damage: 25
     cooldownTime: 1.5
     criticalChance: 0.05

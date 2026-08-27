@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163c39463bafe1e44a471923335ea1e6, type: 3}
+  m_Name: 02_01_FIre_BuffStats
+  m_EditorClassIdentifier: Assembly-CSharp::SkillTemplate
+  skillName: Buff (Fire)
+  skillType: 0
+  element: 101
+  maxLevel: 10
+  description: "\uC77C\uBC18 \uACF5\uACA9\uC758 \uACF5\uACA9\uB825 \uC99D\uAC00\n"
+  disableIcon: {fileID: 21300000, guid: 07affd5d69ed24b49ab894273260e9d4, type: 3}
+  enableIcon: {fileID: 21300000, guid: 98810c7037dd7564f8bac5d625132283, type: 3}
+  buffStatList:
+  - statType: 0
+    maxValue: 0
+    minValue: 0
+    defaultValue: 25
+    bonusValue: 0

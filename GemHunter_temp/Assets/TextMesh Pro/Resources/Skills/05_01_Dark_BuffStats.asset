@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163c39463bafe1e44a471923335ea1e6, type: 3}
+  m_Name: 05_01_Dark_BuffStats
+  m_EditorClassIdentifier: Assembly-CSharp::SkillTemplate
+  skillName: Buff (Dark)
+  skillType: 0
+  element: 104
+  maxLevel: 0
+  description: "\uCCB4\uB825 \uD68C\uBCF5\uB825 \uC99D\uAC00 \n\uC77C\uBC18 \uACF5\uACA9\uC758
+    \uBC1C\uC0AC\uCCB4 \uAC1C\uC218 \uC99D\uAC00"
+  disableIcon: {fileID: 21300000, guid: 0bbb187273c10344bb141ef43d6058ec, type: 3}
+  enableIcon: {fileID: 21300000, guid: 469a01f30c650f949b2bb6c2c1aeb9d8, type: 3}
+  buffStatList:
+  - statType: 7
+    maxValue: 0
+    minValue: 0
+    defaultValue: 10
+    bonusValue: 0
+  - statType: 8
+    maxValue: 0
+    minValue: 0
+    defaultValue: 1
+    bonusValue: 0

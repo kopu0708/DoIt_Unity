@@ -1,3 +1,4 @@
+using System.Data.Common;
 using UnityEngine;
 
 public class SkillGad : MonoBehaviour
@@ -24,13 +25,13 @@ public class SkillGad : MonoBehaviour
             var result = CalculateDamage();
             ProjectileGad gad = Instantiate(projectile, spawnPoint.position,
                 Quaternion.identity);
-            gad.Setup(owner.Target, result);
+            gad.Setup(owner.Target, result.Item1, result.Item2);
 
             currentCooldownTime = Time.time;
         }
     }
 
-    private float CalculateDamage()
+    private (float,bool) CalculateDamage()
     {
         bool isCriticalHit = Random.value <
             owner.Stats.GetStat(StatType.CriticalChance).Value;
@@ -38,8 +39,8 @@ public class SkillGad : MonoBehaviour
         float damage = owner.Stats.GetStat(StatType.Damage).Value;
 
         if (isCriticalHit)
-            return damage * owner.Stats.GetStat(StatType.CriticalMultiplier).Value;
+            return (damage * owner.Stats.GetStat(StatType.CriticalMultiplier).Value, isCriticalHit);
         else
-            return damage;
+            return (damage, isCriticalHit);
     }
 }

@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjecttileGad
   hitEffect: {fileID: 1912701437808375159, guid: 4a570cccc63fe40458a565203c19bcdd, type: 3}
+  damageText: {fileID: 2675531107477273185, guid: 82bad72e1b1777c47a512f3c564aab8e, type: 3}
 --- !u!1 &7741346184221097818
 GameObject:
   m_ObjectHideFlags: 0

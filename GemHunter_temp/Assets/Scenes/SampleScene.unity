@@ -626,6 +626,21 @@ MonoBehaviour:
       minValue: 0
       defaultValue: 0.05
       bonusValue: 0
+    - statType: 6
+      maxValue: 3
+      minValue: 0
+      defaultValue: 0
+      bonusValue: 0
+    - statType: 7
+      maxValue: 9999
+      minValue: 0
+      defaultValue: 0
+      bonusValue: 0
+    - statType: 8
+      maxValue: 4
+      minValue: 1
+      defaultValue: 1
+      bonusValue: 0
     damage: 25
     cooldownTime: 2.5
     criticalChance: 0.05

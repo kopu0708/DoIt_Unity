@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163c39463bafe1e44a471923335ea1e6, type: 3}
+  m_Name: 04_01_Light_BuffStats
+  m_EditorClassIdentifier: Assembly-CSharp::SkillTemplate
+  skillName: Buff (Light)
+  skillType: 0
+  element: 103
+  maxLevel: 10
+  description: "\uD68C\uD53C\uC728 \uC99D\uAC00"
+  disableIcon: {fileID: 21300000, guid: c04bdefc36187a74997da6863ba2902e, type: 3}
+  enableIcon: {fileID: 21300000, guid: 86f1849634612b443a9a352a89449b98, type: 3}
+  buffStatList:
+  - statType: 5
+    maxValue: 0
+    minValue: 0
+    defaultValue: 0.09
+    bonusValue: 0

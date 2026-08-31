@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class PlayerBase : EntityBase
@@ -21,6 +20,7 @@ public class PlayerBase : EntityBase
         if (Target == null) targetMark.gameObject.SetActive(false);
 
         SearchTarget();
+        Recovery();
     }
 
     private void SearchTarget() //가장 가까운 대상을 찾아 공격하는 로직 
@@ -44,5 +44,15 @@ public class PlayerBase : EntityBase
             targetMark.transform.position = Target.transform.position; //targetMark의 오브젝트 위치를 Target위치로 설정 
             targetMark.gameObject.SetActive(true); // 월드에 출력 
         }
+    }
+
+    private void Recovery()
+    {
+        // 체력 회복 
+        if (Stats.CurrentHP.DefaultValue < Stats.GetStat(StatType.HP).Value)
+            Stats.CurrentHP.DefaultValue += Time.deltaTime * Stats.GetStat(StatType.HPRecovery).Value;
+
+        else
+            Stats.CurrentHP.DefaultValue = Stats.GetStat(StatType.HP).Value;
     }
 }

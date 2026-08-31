@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163c39463bafe1e44a471923335ea1e6, type: 3}
+  m_Name: 01_02_Ice_IceSpear
+  m_EditorClassIdentifier: Assembly-CSharp::SkillTemplate
+  skillName: Ice Spear
+  skillType: 1
+  element: 100
+  maxLevel: 99
+  description: "\uAC70\uB300\uD55C \uC5BC\uC74C\uCC3D\uC744 \uC0DD\uC131\uD574 \uB2E8\uC77C
+    \uC801\uC5D0\uAC8C \uD22C\uCC99\uD569\uB2C8\uB2E4."
+  disableIcon: {fileID: 21300000, guid: bc27f8deaa1b5184fa8c6a598dc29f16, type: 3}
+  enableIcon: {fileID: 21300000, guid: f97a27484fa73594e8686e7e21f43041, type: 3}
+  buffStatList: []
+  attackBaseStats:
+  - statType: 0
+    maxValue: 9999
+    minValue: 200
+    defaultValue: 200
+    bonusValue: 0
+  - statType: 1
+    maxValue: 5
+    minValue: 2.5
+    defaultValue: 5
+    bonusValue: 0
+  - statType: 8
+    maxValue: 1
+    minValue: 1
+    defaultValue: 1
+    bonusValue: 0
+  attackBuffStats:
+  - statType: 0
+    maxValue: 0
+    minValue: 0
+    defaultValue: 100
+    bonusValue: 0
+  - statType: 0
+    maxValue: 0
+    minValue: 0
+    defaultValue: -0.2
+    bonusValue: 0
+  projectile: {fileID: 5869711966670350094, guid: df95b533c7896a043ade1dc17c0c2318, type: 3}

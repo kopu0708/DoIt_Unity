@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class EntityBase : MonoBehaviour
@@ -22,6 +21,9 @@ public class EntityBase : MonoBehaviour
     public void TakeDamage(float damage)
     {
         if (IsDead) return; // 죽었으면 반환
+
+        // Evasion 스탯 확률로 공격 회피
+        if (Random.value < Stats.GetStat(StatType.Evasion).Value) return;
 
         Stats.CurrentHP.DefaultValue -= damage;
             

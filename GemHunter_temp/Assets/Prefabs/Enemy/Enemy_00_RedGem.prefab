@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6183605123179737261}
   - component: {fileID: 8155603998247071901}
   - component: {fileID: 2117990733505489600}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: EnemyRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2897818383510312620}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HUDPoint
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -157,7 +157,7 @@ GameObject:
   - component: {fileID: 5835390902799671080}
   - component: {fileID: 6176468019887341265}
   - component: {fileID: 7091121112164314417}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy_00_RedGem
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -305,7 +305,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6998645077386766224}
   - component: {fileID: 1196525792710813347}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2390553650199356659}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -428,7 +428,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6430974270506814600}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MiddlePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

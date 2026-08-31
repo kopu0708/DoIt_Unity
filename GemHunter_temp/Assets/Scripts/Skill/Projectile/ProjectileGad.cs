@@ -7,19 +7,25 @@ public class ProjectileGad : MonoBehaviour
     private Transform hitEffect;
     [SerializeField]
     private UIDamageText damageText;
+    [SerializeField]
+    private float metaRadius = 4f;
     private MovementRigidbody2D movementRigidbody2D;
     private ScaleEffect scaleEffect;
     private EntityBase target;
     private float damage;
     private bool isCritical;
+    private int metastasisCount;
+    private int targetLayer;
 
-    public void Setup(EntityBase target, float damage, bool isCriticl = false)
+    public void Setup(EntityBase owner,EntityBase target, float damage, bool isCriticl = false)
     {
         movementRigidbody2D = GetComponent<MovementRigidbody2D>();
         scaleEffect = GetComponent<ScaleEffect>();
         this.target = target;
         this.damage = damage;
         this.isCritical = isCritical;
+        metastasisCount = (int)owner.Stats.GetStat(StatType.MetastasisCount).Value;
+        targetLayer = 1 << LayerMask.NameToLayer("Enemy");
 
         // 발사체 크기를 35%에서 100%로 확대
         scaleEffect.Play(transform.localScale * 0.35f, transform.localScale);
@@ -52,7 +58,43 @@ public class ProjectileGad : MonoBehaviour
                 Instantiate(hitEffect, transform.position, Quaternion.identity);
             }
             entity.TakeDamage(damage);
-            Destroy(gameObject);
+
+            if(metastasisCount > 0)
+            {
+                metastasisCount--;
+                FindNextTarget();
+            }
+            else Destroy(gameObject);
         }
+    }
+
+    private void FindNextTarget()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(
+            transform.position, metaRadius, targetLayer);
+        EntityBase nextTarget = null;
+
+        for(int i = 0; i< colliders.Length; i++)
+        {
+            if (colliders[i].CompareTag("Enemy") && colliders[i].TryGetComponent<EntityBase>(out var entity) &&
+                !entity.Equals(target))
+            {
+                nextTarget = entity;
+                break;
+            }
+        }
+
+        if (nextTarget != null)
+        {
+            target = nextTarget;
+            //발사체 목표 방향으로 회전
+            transform.rotation = Utils.RotateToTarget(transform.position, target.MiddlePoint, 90);  
+
+            //발사체 이동 방향 설정
+            movementRigidbody2D.MoveTo(
+                (target.MiddlePoint - transform.position).normalized);
+        }
+
+        else Destroy(gameObject);
     }
 }

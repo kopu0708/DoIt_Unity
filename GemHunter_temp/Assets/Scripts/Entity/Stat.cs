@@ -19,9 +19,20 @@ public class Stat
     [SerializeField]
     private float defaultValue;
     [SerializeField]
-    private float bonusValue;
+    private float bonusValue; // 아이템, 스킬 등으로 증가하는 추가값
+
+    public void CopyData(Stat newStat)
+    {
+        statType = newStat.StatType;
+        maxValue = newStat.maxValue;
+        minValue = newStat.minValue;
+        defaultValue = newStat.DefaultValue;
+        bonusValue = newStat.bonusValue;
+    }
 
     public StatType StatType => statType;
+    public float MaxValue => maxValue;
+    public float MinValue => minValue;
     public float Value => Mathf.Clamp(defaultValue + bonusValue, minValue, maxValue); // Value 속성은 스탯의 최종값 
 
     public float DefaultValue // 기본값을 사용하거나 수정할 때 호출하며 

@@ -17,7 +17,7 @@ MonoBehaviour:
   element: 103
   maxLevel: 10
   description: "\uD68C\uD53C\uC728 \uC99D\uAC00"
-  disableIcon: {fileID: 21300000, guid: c04bdefc36187a74997da6863ba2902e, type: 3}
+  disableIcon: {fileID: 21300000, guid: 6bb867d7e2fd6c64bab170e7a69cddba, type: 3}
   enableIcon: {fileID: 21300000, guid: 86f1849634612b443a9a352a89449b98, type: 3}
   buffStatList:
   - statType: 5
@@ -25,3 +25,31 @@ MonoBehaviour:
     minValue: 0
     defaultValue: 0.09
     bonusValue: 0
+  attackBaseStats:
+  - statType: 0
+    maxValue: 9999
+    minValue: 100
+    defaultValue: 100
+    bonusValue: 0
+  - statType: 1
+    maxValue: 6
+    minValue: 3
+    defaultValue: 6
+    bonusValue: 0
+  - statType: 8
+    maxValue: 1
+    minValue: 1
+    defaultValue: 1
+    bonusValue: 0
+  attackBuffStats:
+  - statType: 0
+    maxValue: 0
+    minValue: 0
+    defaultValue: 50
+    bonusValue: 0
+  - statType: 0
+    maxValue: 0
+    minValue: 0
+    defaultValue: -0.15
+    bonusValue: 0
+  projectile: {fileID: 2335662295703127260, guid: ed1db895b36d73f4d8dcb0cd8aaea4ed, type: 3}

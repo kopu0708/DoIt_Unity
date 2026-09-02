@@ -6,6 +6,11 @@ public abstract class ProjectileBase : MonoBehaviour
 {
     protected MovementRigidbody2D movementRigidbody2D;
 
+    public virtual void Setup(EntityBase target, float damage, int maxCount, int index)
+    {
+        Setup(target, damage);
+    }
+
     public virtual void Setup(EntityBase target, float damage) // 기본 세팅은 오버라이딩을 할 수도 있고 안해도 됨
     {
         movementRigidbody2D = GetComponent<MovementRigidbody2D>();

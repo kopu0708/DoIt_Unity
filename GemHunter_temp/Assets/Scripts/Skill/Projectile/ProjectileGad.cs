@@ -17,7 +17,7 @@ public class ProjectileGad : MonoBehaviour
     private int metastasisCount;
     private int targetLayer;
 
-    public void Setup(EntityBase owner,EntityBase target, float damage, bool isCriticl = false)
+    public void Setup(EntityBase owner,EntityBase target, float damage, bool isCritical = false)
     {
         movementRigidbody2D = GetComponent<MovementRigidbody2D>();
         scaleEffect = GetComponent<ScaleEffect>();

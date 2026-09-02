@@ -1,6 +1,8 @@
 using UnityEngine;
 
 public enum DestroyType { None = -1, Collision = 0, }
+public enum AttackType { Single, Multiple }
+
 public class ProjectileCollision2D : MonoBehaviour
 {
     [SerializeField]
@@ -9,6 +11,8 @@ public class ProjectileCollision2D : MonoBehaviour
     private UIDamageText damageText;
     [SerializeField]
     private DestroyType destroyType = DestroyType.None;
+    [SerializeField]
+    private AttackType attackType = AttackType.Single;
     [SerializeField]
     private bool isIgnoreWall = false;
 
@@ -24,14 +28,14 @@ public class ProjectileCollision2D : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Wall") && isIgnoreWall == false) // 벽 통과가 가능하면 true로 바꿔야한다.
+        if (collision.CompareTag("Wall") && isIgnoreWall == false) // 벽 통과가 가능하면 true로 바꿔야한다.
         {
             Destroy(gameObject);
         }
         else if(collision.CompareTag("Enemy") && 
             collision.TryGetComponent<EntityBase>(out var entity)) // 적에 닿았고 EntityBase 컴포넌트가 붙어 있다면 entity 객체 즉시 선언후 사용
         {
-            if (entity != target) return;
+            if (attackType == AttackType.Single && entity != target) return;
 
             if(hitEffect != null)
             {

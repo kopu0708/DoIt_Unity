@@ -24,8 +24,10 @@ public class SkillSystem : MonoBehaviour
             SkillBase skill = null;
             if (item.Value.skillType.Equals(SkillType.Buff))
                 skill = new SkillBuff();
+            else if (item.Value.skillType.Equals(SkillType.Emission))
+                skill = new SkillEmission();
 
-            skill.Setup(item.Value, owner);
+            skill.Setup(item.Value, owner, skillSpawnPoint);
             skills.Add(item.Key, skill);
             // 습득한 모든 스킬의 이름, 레벨, 설명 출력 [Debug]
             Logger.Log($"[{skill.SkillName}] Lv.{skill.CurrentLevel}\n{skill.Description}");
@@ -36,11 +38,25 @@ public class SkillSystem : MonoBehaviour
     {
         // 레벨업 가능한 임의 스킬 3개를 선택하고 그 중 하나 레벨업 [Debug Test]
         if (UnityEngine.InputSystem.Keyboard.current.digit1Key.wasPressedThisFrame) SelectSkill();
+
+        // 모든 공격 스킬 업데이트 
+        foreach ( var item in skills)
+        {
+            if (item.Value.CurrentLevel == 0) continue;
+
+            item.Value.OnSkill();
+        }
         //플레이어의 목표가 없거나 이동 중이면 모든 스킬 사용 불가
         if (owner.Target == null || owner.IsMoved == true) return;
 
         //기본 공격 스킬 업데이트 
         skillGad.OnSkill();
+
+        // 모든 공격 스킬 쿨타임 업데이트 
+        foreach(var item in skills)
+        {
+            item.Value.IsSkillAvailable();
+        }
     }
 
     public void LevelUp(SkillBase skill)

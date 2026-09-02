@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public enum SkillType { Buff = 0, Emission, }
+public enum SkillType { Buff = 0, Emission, Sustained,} 
 public enum SkillElement { None = -1, Ice = 100, Fire, Wind, Light, Dark, Count = 5}
 
 [CreateAssetMenu(fileName = "NewSkill", menuName = "SkillAsset", order = 0)]

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public enum DestroyType { None = -1, Collision = 0, }
+public enum DestroyType { None = -1, Collision = 0, Indestructible, } // Collision은 파괴 되는거, Indestructible은 유지 되는거
 public enum AttackType { Single, Multiple }
 
 public class ProjectileCollision2D : MonoBehaviour

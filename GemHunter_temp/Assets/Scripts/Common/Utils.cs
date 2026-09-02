@@ -38,7 +38,23 @@ public static class Utils
 
         return degree;
     }
+    /// <summary>
+    /// 각도를 기준으로 원의 둘레 위치를 구한다.
+    /// </summary>
+    /// <param name="radius">원의 반지름 </param>
+    /// <param name="angle">각도</param>
+    /// <returns>원의 반지름, 각도에 해당하는 둘레 위치</returns>
+    public static Vector3 GetPositionFromAngle(float radius,float angle)
+    {
+        Vector3 position = Vector3.zero;
 
+        angle = DegreeToRadian(angle);
+
+        position.x = Mathf.Cos(angle) * radius;
+        position.y = Mathf.Sin(angle) * radius; 
+
+        return position;
+    }
     /// <summary>
     /// Degree값을 Radian값으로 변환한다.
     /// 1도는 "PI/180 * angle" radian
@@ -53,9 +69,9 @@ public static class Utils
         // Degree 각도를 Radius으로 변경
         angle = DegreeToRadian(angle);
 
-        // 원점을 기준으로 X, Y좌표를 구하므로 시작 좌표 (start)를 더함
+        // 원점을 기준으로 X, Y좌표를 구하므로 시작 좌표 (start)를 더함 원점 기준이 아니라 임의의 시작점을 기준으로 하기 위해
         Vector2 position = Vector2.zero;
-        position.x = Mathf.Cos(angle) * r + start.x;
+        position.x = Mathf.Cos(angle) * r + start.x;  
         position.y = Mathf.Sin(angle) * r + start.y;
 
         return position;
@@ -63,12 +79,12 @@ public static class Utils
 
     public static Vector2 Lerp(Vector2 a, Vector2 b, float t)
     {
-        return a + (b - a) * t;
+        return a + (b - a) * t;  // 벡터 연산에 비율(t)를 곱해 그 방향으로 t% 만큼 이동한 좌표를 구한다.
     }
 
-    public static Vector2 QuadraticCurve(Vector2 a, Vector2 b, Vector2 c, float t)
+    public static Vector2 QuadraticCurve(Vector2 a, Vector2 b, Vector2 c, float t) //  Lerp함수를 중첩 사용해 직선 이동을 여러변 겹쳐 곡선을 만든다.
     {
-        Vector2 p1 = Lerp(a, b, t);
+        Vector2 p1 = Lerp(a, b, t);  
         Vector2 p2 = Lerp(b, c, t);
 
         return Lerp(p1, p2, t);

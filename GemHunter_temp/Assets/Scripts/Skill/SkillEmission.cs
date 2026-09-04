@@ -32,11 +32,11 @@ public class SkillEmission : SkillBase
 
                 // ProjectileStraight, ProjectileHoming도 연발은 가능하지만  3, 4번째 매개변수는 필요 없으므로 기존과 동일하게 처리
                 if (projectile.TryGetComponent<ProjectileCubicHoming>(out var p))
-                    p.Setup(owner.Target, GetStat(StatType.Damage).Value, maxCount, currentProjectileCount);
+                    p.Setup(owner.Target, CaclulateDamage(), maxCount, currentProjectileCount);
                 else if (projectile.TryGetComponent<ProjectileQuadraticHoming>(out var p2))
-                    p2.Setup(owner.Target, GetStat(StatType.Damage).Value, maxCount, currentProjectileCount);
+                    p2.Setup(owner.Target, CaclulateDamage(), maxCount, currentProjectileCount);
                 else projectile.GetComponent<ProjectileBase>().Setup(
-                    owner.Target, GetStat(StatType.Damage).Value);
+                    owner.Target, CaclulateDamage());
 
                 currentProjectileCount++;
                 currentAttackRate = Time.time;

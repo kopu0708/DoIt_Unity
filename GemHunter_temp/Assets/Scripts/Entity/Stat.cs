@@ -1,7 +1,10 @@
 using UnityEngine;
 
 public enum StatType {Damage = 0, CooldownTime, CriticalChance, CriticalMultiplier, HP, Evasion,
-                        MetastasisCount, HPRecovery, ProjectileCount, }
+                        MetastasisCount, HPRecovery, ProjectileCount, Duration, AttackRate,
+
+                        IceElementalBonus = 100, FireElementalBonus, WindElementalBonus,
+                        LightElementalBonus, DarkElementalBonus }
 [System.Serializable]
 public class Stat
 {
@@ -13,7 +16,7 @@ public class Stat
     [SerializeField]
     private StatType statType;
     [SerializeField]
-    private float maxValue;
+    private float maxValue; 
     [SerializeField]
     private float minValue;
     [SerializeField]

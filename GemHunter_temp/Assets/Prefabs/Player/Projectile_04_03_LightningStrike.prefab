@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 423706663247344159}
+  - component: {fileID: -4163926979949372352}
   m_Layer: 0
   m_Name: Projectile_04_03_LightningStrike
   m_TagString: Untagged
@@ -31,3 +32,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4163926979949372352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7125656485779199507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7aff813da53844438284a27d44b7cac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectileLightningStrike
+  hitEffect: {fileID: 1355416411512879926, guid: da7733f4e27640b4b9901f006e4c829e, type: 3}
+  damageText: {fileID: 2675531107477273185, guid: 82bad72e1b1777c47a512f3c564aab8e, type: 3}
+  projectile: {fileID: 8271924070020641894, guid: 37e7286e2c87b7a45a989efec93dd9c4, type: 3}

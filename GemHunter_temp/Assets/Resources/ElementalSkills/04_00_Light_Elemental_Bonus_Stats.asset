@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163c39463bafe1e44a471923335ea1e6, type: 3}
+  m_Name: 04_00_Light_Elemental_Bonus_Stats
+  m_EditorClassIdentifier: Assembly-CSharp::SkillTemplate
+  skillName: Elemental Bonus (Light)
+  skillType: 0
+  element: 103
+  maxLevel: 99
+  description: "\uBE5B \uC18D\uC131 \uACF5\uACA9\uB825 \uC99D\uAC00\n\uCCB4\uB825
+    \uC99D\uAC00"
+  disableIcon: {fileID: 21300000, guid: 09ff91a623e495140803276a18891e72, type: 3}
+  enableIcon: {fileID: 21300000, guid: be91f4bfe22d8074a9dfb035474af013, type: 3}
+  buffStatList:
+  - statType: 103
+    maxValue: 0
+    minValue: 0
+    defaultValue: 0.5
+    bonusValue: 0
+  - statType: 4
+    maxValue: 0
+    minValue: 0
+    defaultValue: 100
+    bonusValue: 0
+  attackBaseStats: []
+  attackBuffStats: []
+  projectile: {fileID: 0}

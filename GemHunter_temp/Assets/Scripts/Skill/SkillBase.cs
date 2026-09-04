@@ -18,6 +18,7 @@ public abstract class SkillBase
     public string Description => skillTemplate.description;
     public int CurrentLevel => currentLevel;
     public bool IsMaxLV => currentLevel == skillTemplate.maxLevel;
+    public PlayerBase Owner => owner;
 
     // 공격 스킬 전용(공격력, 쿨타임, 발사체 개수 같은 스텟)
     private Stat[] stats;
@@ -67,6 +68,15 @@ public abstract class SkillBase
         {
             isSkillAvailable = true;
         }
+    }
+
+    protected float CaclulateDamage()
+    {
+        float damgae = GetStat(StatType.Damage).Value;
+        damgae += damgae * owner.Stats.GetStat((StatType)Element).Value;  // StatType을 열거형에서 100, 101, 102,103,104로 설정했으므로 SkillElement 열거형 변수 Element를 StatType형으로 
+                                                                          // 변환해 코드에서 간단히 사용할 수 있다.
+
+        return damgae;
     }
     public abstract void OnLevelUp(); // 스킬 레벨업 시 1회 호출 
     public abstract void OnSkill(); // 스킬 사용시 호출    

@@ -10,31 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 163c39463bafe1e44a471923335ea1e6, type: 3}
-  m_Name: 04_01_Light_BuffStats
+  m_Name: 02_03_Fire_FIreDragon
   m_EditorClassIdentifier: Assembly-CSharp::SkillTemplate
-  skillName: Buff (Light)
-  skillType: 0
-  element: 103
-  maxLevel: 10
-  description: "\uD68C\uD53C\uC728 \uC99D\uAC00"
-  disableIcon: {fileID: 21300000, guid: 6bb867d7e2fd6c64bab170e7a69cddba, type: 3}
-  enableIcon: {fileID: 21300000, guid: 86f1849634612b443a9a352a89449b98, type: 3}
-  buffStatList:
-  - statType: 5
-    maxValue: 0
-    minValue: 0
-    defaultValue: 0.09
-    bonusValue: 0
+  skillName: Fire Drangon
+  skillType: 3
+  element: 101
+  maxLevel: 99
+  description: "\uC6A9\uC774 \uD544\uB4DC\uC704\uB97C \uC9C0\uB098\uAC10 \uD544\uB4DC
+    \uC704 \uBAA8\uB4E0 \uC801\uC774 1\uD68C \uD53C\uD574\uB97C \uBC1B\uC74C"
+  disableIcon: {fileID: 21300000, guid: 70eecf50563746547afe74156a2cfc20, type: 3}
+  enableIcon: {fileID: 21300000, guid: 32e1dd4ad1b8d5647b0ae58df052c4a8, type: 3}
+  buffStatList: []
   attackBaseStats:
   - statType: 0
     maxValue: 9999
-    minValue: 100
-    defaultValue: 100
+    minValue: 500
+    defaultValue: 500
     bonusValue: 0
   - statType: 1
-    maxValue: 6
-    minValue: 3
-    defaultValue: 6
+    maxValue: 14
+    minValue: 7
+    defaultValue: 14
     bonusValue: 0
   - statType: 8
     maxValue: 1
@@ -45,11 +41,11 @@ MonoBehaviour:
   - statType: 0
     maxValue: 0
     minValue: 0
-    defaultValue: 50
+    defaultValue: 250
     bonusValue: 0
-  - statType: 0
+  - statType: 1
     maxValue: 0
     minValue: 0
-    defaultValue: -0.15
+    defaultValue: -0.2
     bonusValue: 0
-  projectile: {fileID: 0}
+  projectile: {fileID: 847723566615446108, guid: bdb64a0fff0019346ad85b1d4a0c9a84, type: 3}

@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class ProjectileBase : MonoBehaviour
 {
     protected MovementRigidbody2D movementRigidbody2D;
-
+    public virtual void Setup(SkillBase skillBase, float damage) { } // 광역 스킬 전용 Setup 상속받는 클래스에서 정의 (광역 스킬을 정의하는 클래스에서 정의 하면 됨)
     public virtual void Setup(EntityBase target, float damage, int maxCount, int index)
     {
         Setup(target, damage);

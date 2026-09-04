@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163c39463bafe1e44a471923335ea1e6, type: 3}
+  m_Name: 02_05_Fire_Pickax
+  m_EditorClassIdentifier: Assembly-CSharp::SkillTemplate
+  skillName: Fire Pickax
+  skillType: 2
+  element: 101
+  maxLevel: 99
+  description: "\uD50C\uB808\uC774\uC5B4\uB97C \uAE30\uC900\uC73C\uB85C \uC6D0 \uC6B4\uB3D9\uD558\uB294
+    \uACE1\uAD2D\uC774"
+  disableIcon: {fileID: 21300000, guid: 049b59a88c9db514aae246e856bb2a86, type: 3}
+  enableIcon: {fileID: 21300000, guid: 0f99f2a943f9051428ea447dd237cece, type: 3}
+  buffStatList: []
+  attackBaseStats:
+  - statType: 0
+    maxValue: 9999
+    minValue: 50
+    defaultValue: 50
+    bonusValue: 0
+  - statType: 8
+    maxValue: 3
+    minValue: 3
+    defaultValue: 3
+    bonusValue: 0
+  attackBuffStats:
+  - statType: 0
+    maxValue: 0
+    minValue: 0
+    defaultValue: 50
+    bonusValue: 0
+  projectile: {fileID: 2939991508169524587, guid: c65b8518348516b408507a5ac9588bb9, type: 3}

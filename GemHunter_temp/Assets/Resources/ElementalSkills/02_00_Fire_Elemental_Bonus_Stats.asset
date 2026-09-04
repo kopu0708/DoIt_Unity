@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163c39463bafe1e44a471923335ea1e6, type: 3}
+  m_Name: 02_00_Fire_Elemental_Bonus_Stats
+  m_EditorClassIdentifier: Assembly-CSharp::SkillTemplate
+  skillName: Elemental Bonus (Fire)
+  skillType: 0
+  element: 101
+  maxLevel: 99
+  description: "\uBD88 \uC18D\uC131 \uACF5\uACA9\uB825 \uC99D\uAC00"
+  disableIcon: {fileID: 21300000, guid: 9b4335c93a73ef44aae26e6fcae6ebbb, type: 3}
+  enableIcon: {fileID: 21300000, guid: 24acdab4348508743b65bd9cbbaea9c3, type: 3}
+  buffStatList:
+  - statType: 101
+    maxValue: 0
+    minValue: 0
+    defaultValue: 1
+    bonusValue: 0
+  attackBaseStats: []
+  attackBuffStats: []
+  projectile: {fileID: 0}

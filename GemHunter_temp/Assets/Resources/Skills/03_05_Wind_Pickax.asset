@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163c39463bafe1e44a471923335ea1e6, type: 3}
+  m_Name: 03_05_Wind_Pickax
+  m_EditorClassIdentifier: Assembly-CSharp::SkillTemplate
+  skillName: WInd Pickax
+  skillType: 2
+  element: 102
+  maxLevel: 99
+  description: "\uD50C\uB808\uC774\uC5B4\uB97C \uAE30\uC900\uC73C\uB85C \uC6D0 \uC6B4\uB3D9\uD558\uB294
+    \uACE1\uAD2D\uC774"
+  disableIcon: {fileID: 21300000, guid: 0200ea94c8c4de846b2dc5e85259446b, type: 3}
+  enableIcon: {fileID: 21300000, guid: 72423cd59cf96214faccf65dfd978ec5, type: 3}
+  buffStatList: []
+  attackBaseStats:
+  - statType: 0
+    maxValue: 9999
+    minValue: 50
+    defaultValue: 50
+    bonusValue: 0
+  - statType: 8
+    maxValue: 3
+    minValue: 3
+    defaultValue: 3
+    bonusValue: 0
+  attackBuffStats:
+  - statType: 0
+    maxValue: 0
+    minValue: 0
+    defaultValue: 50
+    bonusValue: 0
+  projectile: {fileID: 8631336706739582677, guid: 72f3af28cde56e14392b35e86df48883, type: 3}

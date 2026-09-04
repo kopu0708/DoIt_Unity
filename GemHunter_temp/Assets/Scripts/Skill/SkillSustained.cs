@@ -49,7 +49,7 @@ public class SkillSustained : SkillBase
         foreach(var item in pickaxs)
         {
             item.GetComponent<ProjectileCollision2D>().Setup(
-                null, GetStat(StatType.Damage).Value);
+                null, CaclulateDamage());
         }
     }
 
@@ -59,7 +59,7 @@ public class SkillSustained : SkillBase
         {
             GameObject clone = GameObject.Instantiate(skillTemplate.projectile, parent);
             clone.GetComponent<ProjectileCollision2D>().Setup(
-                null, GetStat(StatType.Damage).Value);
+                null, CaclulateDamage());
             pickaxs.Add(clone);
         }
     }

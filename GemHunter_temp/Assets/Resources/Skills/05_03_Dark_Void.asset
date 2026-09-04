@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163c39463bafe1e44a471923335ea1e6, type: 3}
+  m_Name: 05_03_Dark_Void
+  m_EditorClassIdentifier: Assembly-CSharp::SkillTemplate
+  skillName: 'Void '
+  skillType: 3
+  element: 104
+  maxLevel: 99
+  description: "\uC804\uBC29\uC73C\uB85C \uC774\uB3D9\uD558\uB294 \uAD6C\uCCB4 \uBC1C\uC0AC\n\uAD6C\uCCB4\uAC00
+    \uC8FC\uAE30\uC801\uC73C\uB85C \uC0DD\uC131\uD558\uB294 \uBC1C\uC0AC\uCCB4\uC640
+    \uD53C\uACA9\uD558\uB294 \uC801\uC5D0\uAC8C \uB370\uBBF8\uC9C0"
+  disableIcon: {fileID: 21300000, guid: 40432151763e1944e84379c955579015, type: 3}
+  enableIcon: {fileID: 21300000, guid: 729492f17d110f9468a42c6e66f17426, type: 3}
+  buffStatList: []
+  attackBaseStats:
+  - statType: 0
+    maxValue: 9999
+    minValue: 30
+    defaultValue: 30
+    bonusValue: 0
+  - statType: 1
+    maxValue: 10
+    minValue: 5
+    defaultValue: 10
+    bonusValue: 0
+  - statType: 8
+    maxValue: 10
+    minValue: 10
+    defaultValue: 10
+    bonusValue: 0
+  - statType: 9
+    maxValue: 7
+    minValue: 4
+    defaultValue: 4
+    bonusValue: 0
+  - statType: 10
+    maxValue: 1
+    minValue: 1
+    defaultValue: 1
+    bonusValue: 0
+  attackBuffStats:
+  - statType: 0
+    maxValue: 0
+    minValue: 0
+    defaultValue: 15
+    bonusValue: 0
+  - statType: 1
+    maxValue: 0
+    minValue: 0
+    defaultValue: -0.25
+    bonusValue: 0
+  - statType: 9
+    maxValue: 0
+    minValue: 0
+    defaultValue: 0.2
+    bonusValue: 0
+  projectile: {fileID: 2669324722476767220, guid: 3556dfbe282d2b141be3b122a82952d4, type: 3}

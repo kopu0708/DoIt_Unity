@@ -35,8 +35,9 @@ public class EnemySpawner : MonoBehaviour
 
             GameObject clone = Instantiate(enemyPrefabs[type], possibleTiles[index],
                 Quaternion.identity, transform); //그냥 회전 안 시키고 원본 각도 그대로 생성
-            clone.GetComponent<EnemyBase>().Initialize(parentTransform);  // 적 스폰에 Initialize 호출 
+            clone.GetComponent<EnemyBase>().Initialize(this, parentTransform);  // 적 스폰에 Initialize 호출 
             clone.GetComponent<EnemyFSM>().Setup(target);
+
             Enemies.Add(clone.GetComponent<EntityBase>()); //적이 추가되면 리스트에 추가
         }
     }
@@ -65,5 +66,11 @@ public class EnemySpawner : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void Deactivate(EnemyBase enemy)
+    {
+        Enemies.Remove(enemy);
+        Destroy(enemy.gameObject);
     }
 }

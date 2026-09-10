@@ -18,6 +18,7 @@ public abstract class SkillBase
     public string Description => skillTemplate.description;
     public int CurrentLevel => currentLevel;
     public bool IsMaxLV => currentLevel == skillTemplate.maxLevel;
+    public Sprite EnableIcon => skillTemplate.enableIcon;
     public PlayerBase Owner => owner;
 
     // 공격 스킬 전용(공격력, 쿨타임, 발사체 개수 같은 스텟)

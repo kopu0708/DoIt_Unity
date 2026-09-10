@@ -195,8 +195,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBase
   stats:
-    level: 1
-    exp: 0
+    currentExp:
+      statType: 12
+      maxValue: 9999
+      minValue: 0
+      defaultValue: 10
+      bonusValue: 0
     currentHP:
       statType: 4
       maxValue: 9999
@@ -234,7 +238,12 @@ MonoBehaviour:
       minValue: 0
       defaultValue: 0.05
       bonusValue: 0
-    damage: 25
+    - statType: 11
+      maxValue: 9999
+      minValue: 1
+      defaultValue: 1
+      bonusValue: 0
+    damage: 25.3
     cooldownTime: 1.5
     criticalChance: 0.05
     criticlaMultiplier: 2

@@ -4,10 +4,9 @@ using System.Linq;
 [System.Serializable]
 public struct EntityStats 
 {
-    [Header("Level, Exp")]
-    public int level; // 레벨
-    public long exp; // 경험치 
-
+    [Header("Current Stats")]
+    [SerializeField]
+    private Stat currentExp;
     [Header("Current HP")]
     [SerializeField]
     private Stat currentHP;
@@ -16,6 +15,7 @@ public struct EntityStats
     [SerializeField]
     private Stat[] stats;
 
+    public readonly Stat CurrentExp => currentExp;
     public readonly Stat CurrentHP => currentHP;
     public readonly Stat GetStat(Stat stat) =>
         stats.FirstOrDefault(s => s.StatType == stat.StatType);

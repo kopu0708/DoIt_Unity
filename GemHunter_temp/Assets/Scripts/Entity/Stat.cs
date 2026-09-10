@@ -2,6 +2,7 @@ using UnityEngine;
 
 public enum StatType {Damage = 0, CooldownTime, CriticalChance, CriticalMultiplier, HP, Evasion,
                         MetastasisCount, HPRecovery, ProjectileCount, Duration, AttackRate,
+                        Level, Experience,
 
                         IceElementalBonus = 100, FireElementalBonus, WindElementalBonus,
                         LightElementalBonus, DarkElementalBonus }

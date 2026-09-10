@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uB208\uBCF4\uB77C (Blizzard)"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e6ae23e5d2f8da149912fdf4a209165c, type: 2}
-  m_sharedMaterial: {fileID: 716808306006089594, guid: e6ae23e5d2f8da149912fdf4a209165c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b138cbeabbe12c04da914aff39392e0b, type: 2}
+  m_sharedMaterial: {fileID: 3416342709091166283, guid: b138cbeabbe12c04da914aff39392e0b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -103,6 +103,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -279,8 +280,8 @@ MonoBehaviour:
   m_text: "\uD544\uB4DC\uC5D0 \uB208\uBCF4\uB77C \uC0DD\uC131\n\uBAA8\uB4E0 \uC801\uC744
     \uC8FC\uAE30\uC801\uC73C\uB85C \uACF5\uACA9"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e6ae23e5d2f8da149912fdf4a209165c, type: 2}
-  m_sharedMaterial: {fileID: 716808306006089594, guid: e6ae23e5d2f8da149912fdf4a209165c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b138cbeabbe12c04da914aff39392e0b, type: 2}
+  m_sharedMaterial: {fileID: 3416342709091166283, guid: b138cbeabbe12c04da914aff39392e0b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -315,6 +316,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -359,6 +361,7 @@ GameObject:
   - component: {fileID: 6619390165118170017}
   - component: {fileID: 3785064101589168143}
   - component: {fileID: 3912787648297641713}
+  - component: {fileID: 3090456761255917275}
   m_Layer: 5
   m_Name: SelectSkillIcon
   m_TagString: Untagged
@@ -426,3 +429,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3090456761255917275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8799577017533863759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30cca5ea4126289408f39f21b9b9acc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UISelectSkillIcon
+  skillIcon: {fileID: 1612569674932150805}
+  skillName: {fileID: 7439998716405594468}
+  skillDescription: {fileID: 4273420537210546119}

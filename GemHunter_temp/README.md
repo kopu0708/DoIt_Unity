@@ -110,3 +110,6 @@ EntityStats 구조체가 여러 Stat들을 한데 묶어서 들고 있다. 그�
 - 그 외에는 뭐 이미 준비해둔 오브젝트가 모두 사용되고 있을 경우 정해진 단위 개수 만큼 새로 생성하거나 리스트를 순회하면서 게임의 모든 오브젝트를 false로 만드는 코드들이다.
 - 유니티 내장 함수들도 몇개 알았는데 유용해 보인다. 먼저 RectTransformUtility.WorldToScreenPoint() 함수인데 게임 속 월드 좌표를, 화면(UI)죄표로 변환해주는 함수이다. 입력은 카메라와와 월드 좌표가 들어간다. Canvas컴포넌트의 Render Mode가 [Screen Space - Overlay] 일 때는 자동 설정인 null로, [Screen space - Camera] 나 [World space]일때는 Canvas에 등록된 카메라와 동일한 카메라를 매개변수로 설정한다.
 - 반대로 ScreenPointToLocalPointInRectangle() 이건 그 화면 좌표를, UI 캔버스 안의 로컬 좌표로 다시 반환한다.
+
+# 2026-09-14 학습 기록 
+- 보석 효과 UI 만들기 이후 적들이 장애물을 피해 플레이어를 찾아오는 길 찾기를 구현했는데, NavMesh2D를 이용해 구현하더라 나는 경로 탐색 알고리즘 이런 걸 배워야하는 줄 알았는데 말이다. 물론 내가 필요하면 직접 구현할 필요가 있겠지만 일단 교재에서는 에셋을 가져와 구현을 했다. 

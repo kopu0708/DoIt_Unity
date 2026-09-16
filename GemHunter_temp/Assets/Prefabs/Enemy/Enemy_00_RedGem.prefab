@@ -157,6 +157,9 @@ GameObject:
   - component: {fileID: 5835390902799671080}
   - component: {fileID: 6176468019887341265}
   - component: {fileID: 7091121112164314417}
+  - component: {fileID: 5878258619138088477}
+  - component: {fileID: 8956338875755182033}
+  - component: {fileID: 2564373548173063455}
   m_Layer: 6
   m_Name: Enemy_00_RedGem
   m_TagString: Enemy
@@ -253,6 +256,8 @@ MonoBehaviour:
   middlePoint: {fileID: 6430974270506814600}
   hudPoint: {fileID: 2897818383510312620}
   uiPrefab: {fileID: 7807364304789348225, guid: 66c8c87205b5c354eb30ded8c0e79298, type: 3}
+  gemMIn: 5
+  gemMax: 21
 --- !u!114 &6176468019887341265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,8 +270,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f8aea3252f7974bae0a31648349648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFSM
-  projectilePrefab: {fileID: 6921219697684148368, guid: 53b4c3812ae4bdd43824abb1838e52ff, type: 3}
-  projectileSpawnPoint: {fileID: 6430974270506814600}
 --- !u!70 &7091121112164314417
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -304,6 +307,107 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.55}
   m_Size: {x: 0.6, y: 0.9}
   m_Direction: 0
+--- !u!195 &5878258619138088477
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682498285235524163}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.3
+  m_Speed: 2.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 0
+--- !u!114 &8956338875755182033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682498285235524163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0038c16c34866b4f9e25c9c0dc0f7e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Behavior::Unity.Behavior.BehaviorGraphAgent
+  m_Graph: {fileID: 4778942823784194843, guid: 017718013f4554246bf3ebae2c3de793, type: 2}
+  m_BlackboardVariableOverridesList:
+  - rid: 8019979972177559994
+  - rid: 8019979995438907811
+  - rid: 8019979995438907812
+  - rid: 8019979995438907813
+  - rid: 8019979996588409320
+  m_OriginalGraph: {fileID: 4778942823784194843, guid: 017718013f4554246bf3ebae2c3de793, type: 2}
+  m_IsInitialised: 0
+  m_IsStarted: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 8019979972177559994
+      type: {class: 'BlackboardVariable`1[[UnityEngine.GameObject, UnityEngine.CoreModule]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 1
+          m_Value1: 0
+        Name: Self
+        m_Value: {fileID: 1682498285235524163}
+    - rid: 8019979995438907811
+      type: {class: 'BlackboardVariable`1[[System.Single, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 1811005622823737772
+          m_Value1: 14549720282429253411
+        Name: attackDistance
+        m_Value: 4
+    - rid: 8019979995438907812
+      type: {class: 'BlackboardVariable`1[[System.Single, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 8932931368787197722
+          m_Value1: 12801943073823072478
+        Name: chaseDistance
+        m_Value: 6
+    - rid: 8019979995438907813
+      type: {class: 'BlackboardVariable`1[[System.Single, mscorlib]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 12938432376860710910
+          m_Value1: 18325008311424019384
+        Name: fallOutDistance
+        m_Value: 10
+    - rid: 8019979996588409320
+      type: {class: 'BlackboardVariable`1[[WeaponBase, Assembly-CSharp]]', ns: Unity.Behavior, asm: Unity.Behavior}
+      data:
+        GUID:
+          m_Value0: 207070410529802192
+          m_Value1: 8212759735184191908
+        Name: currentWeapon
+        m_Value: {fileID: 2564373548173063455}
+--- !u!114 &2564373548173063455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682498285235524163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0d479c8c7fdbad4fa4d0a3fe99bb0ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponStraight
+  projectilePrefab: {fileID: 6921219697684148368, guid: 53b4c3812ae4bdd43824abb1838e52ff, type: 3}
+  projectileSpawnPoint: {fileID: 6430974270506814600}
 --- !u!1 &4122869965832842880
 GameObject:
   m_ObjectHideFlags: 0

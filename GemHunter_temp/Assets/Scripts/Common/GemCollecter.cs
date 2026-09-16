@@ -12,10 +12,10 @@ public class GemCollecter : MonoBehaviour
 
     private void Awake()
     {
-        memoryPool = new MemoryPool(gemEffectPrefab);
-    }
+        memoryPool = new MemoryPool(gemEffectPrefab); // 생성/관리할 프리팹 정보를 매개변수로 하여 메모리를 할당
+    }   
 
-    public void SpawnGemEffect(Vector2 point, int count = 5)
+    public void SpawnGemEffect(Vector2 point, int count = 5) // 적이 죽으며 이 메소드를 호출해 point 위치에 count만큼 보석 수집 효과를 생성한다.
     {
         for(int i = 0; i < count; ++i)
         {
@@ -24,7 +24,7 @@ public class GemCollecter : MonoBehaviour
         }
     }
 
-    public void OnGemCollect(GameObject gem)
+    public void OnGemCollect(GameObject gem) // 보석 수집 효과가 UI 위치까지 이동했을 때 호출하는 메서드
     {
         onGemCollectEvent?.Invoke(); // 보석을 얻을 때 이벤트에 등록된 메소드를 호출한다.
         memoryPool.DeactivatePoolItem(gem); // 매개변수로 받은 gem 오브젝트 비활성화 

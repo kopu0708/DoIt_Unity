@@ -1,58 +1,31 @@
 using UnityEngine;
-using System.Collections;
+using System.Linq;
+using UnityEngine.AI;
+using Unity.Behavior;
 
-public enum EnemyState { None = -1 ,Attack, }
 public class EnemyFSM : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject projectilePrefab;
-    [SerializeField]
-    private Transform projectileSpawnPoint;
-
     private EnemyBase owner;
-
-    private EnemyState enemyState;
+    private NavMeshAgent navMeshAgent; // 적 이동 경로 설정과 이동 제어
+    private BehaviorGraphAgent behaviorAgent; // 적 행동 제어
+    private WeaponBase currentWeapon; // 현재 활성화된 무기
 
     private void Awake() 
     {
-        owner = GetComponent<EnemyBase>();   
+        owner = GetComponent<EnemyBase>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        behaviorAgent = GetComponent<BehaviorGraphAgent>();
+        currentWeapon = GetComponent<WeaponBase>();
 
-        ChangeState(EnemyState.Attack); // Awake() 메서드에서 현재상태를 공격으로 설정해 Attack() 코루틴 메소드를 호출 
+        navMeshAgent.updateRotation = false; // 이동 방향으로 자동회전을 막아둔다.
+        navMeshAgent.updateUpAxis = false; // 이건 2D 프로젝트인 경우 거의 필수로 끄라고 한다. 안끄면 2D 스프라이트가 이상하게 눕거나 기울어짐 
+        currentWeapon.Setup(owner);
     }
 
-    public void Setup(EntityBase target)
+    public void Setup(EntityBase target, GameObject[] wayPoints)
     {
         owner.Target = target;
-    }
-
-    public void ChangeState(EnemyState newState)
-    {
-        // 열거형 변수.ToString()은 열거형으로 정의한 변수 이름을 문자열로 반환한다.
-        // ex) enemyState가 현재 EnemyState.Idle 이면 "Idle" 문자열을 반환
-        // 이를 이용해 열거형 이름과 코루틴 이름을 일치시켜 
-        // 열거형 변수에 따라 코루틴 함수를 재생시켜 제어할 수 있다.
-
-        // 이전에 재생 중이던 상태 종료
-        StopCoroutine(enemyState.ToString());
-        // 상태 변경
-        enemyState = newState;
-        // 새로운 상태 재생
-        StartCoroutine(enemyState.ToString());
-    }
-
-    private IEnumerator Attack()
-    {
-        var wait = new WaitForSeconds(owner.Stats.GetStat(StatType.CooldownTime).Value); //쿨타임이 돌때마다.
-
-        while (true)
-        {
-            yield return wait;
-
-            Vector3 target = owner.Target.MiddlePoint;  // 타겟의 중간 지점으로 
-            GameObject clone = Instantiate(projectilePrefab); // 프리팹을 생성해 
-            clone.transform.position = projectileSpawnPoint.position; // 직선으로 날린다. 
-            clone.GetComponent<EnemyProjectile>().Setup(target,
-                owner.Stats.GetStat(StatType.Damage).Value); //그를 위해서 Setup메소드 호출 
-        }
+        behaviorAgent.SetVariableValue("PatrolPoints", wayPoints.ToList()); // Blackboard에 선언한 patrolPoints 변수에 wayPoints 리스트 변수를 저장 
+        behaviorAgent.SetVariableValue("Target", target.gameObject);
     }
 }

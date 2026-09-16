@@ -20,6 +20,8 @@ public class PlayerBase : EntityBase
 
     // 적을 물리치고 축적한 경험치
     public float AccumulationExp { get; set; } = 0f;
+    // 현재 스테이지에서 획득한 보석 개수 
+    public int GEM { get; private set; } = 0;
 
     private void Awake()
     {
@@ -104,9 +106,14 @@ public class PlayerBase : EntityBase
         else
             Stats.CurrentHP.DefaultValue = Stats.GetStat(StatType.HP).Value;
     }
-
+    
+    public void AddGEM()
+    {
+        GEM++;
+    }
     protected override void OnDie()
     {
         Logger.Log("플레이어 사망 처리");
     }
+
 }

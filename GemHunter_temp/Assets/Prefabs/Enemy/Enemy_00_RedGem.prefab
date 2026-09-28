@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: 5878258619138088477}
   - component: {fileID: 8956338875755182033}
   - component: {fileID: 2564373548173063455}
+  - component: {fileID: 5111478585328268186}
   m_Layer: 6
   m_Name: Enemy_00_RedGem
   m_TagString: Enemy
@@ -408,6 +409,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WeaponStraight
   projectilePrefab: {fileID: 6921219697684148368, guid: 53b4c3812ae4bdd43824abb1838e52ff, type: 3}
   projectileSpawnPoint: {fileID: 6430974270506814600}
+--- !u!95 &5111478585328268186
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682498285235524163}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f183a41cc32b4374984f6691519e1443, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4122869965832842880
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,6 +4,8 @@ using UnityEngine;
 public class PlayerBase : EntityBase
 {
     [SerializeField]
+    private GameController gameController;
+    [SerializeField]
     private FollowTarget targetMark;
     [SerializeField]
     private LevelData levelData; // 인게임 레벨업 경험치 테이블 정보
@@ -113,7 +115,7 @@ public class PlayerBase : EntityBase
     }
     protected override void OnDie()
     {
-        Logger.Log("플레이어 사망 처리");
+        gameController.GameOver();
     }
 
 }

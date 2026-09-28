@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.Events;
+using TMPro;
 
 public static class FadeEffect // 페이드 효과는 게임 전반으로 사용되므로 정적 클래스와 메서드로 정의해 인스턴스 변수를 생성하지 않고 호출할 수 있게 한다.
 {
@@ -18,6 +19,26 @@ public static class FadeEffect // 페이드 효과는 게임 전반으로 사용
 
             Color color = target.color;
             color.a = Mathf.Lerp(start, end, percent);  // 부드러운 처리 
+            target.color = color;
+
+            yield return null;
+        }
+
+        action?.Invoke();
+    }
+    public static IEnumerator Fade(TextMeshProUGUI target, float start, float end,
+        float fadeTime=1f, UnityAction action = null)
+    {
+        if (target == null) yield break;
+
+        float percent = 0;
+
+        while(percent < 1)
+        {
+            percent += Time.deltaTime / fadeTime;
+
+            Color color = target.color;
+            color.a = Mathf.Lerp(start, end, percent);
             target.color = color;
 
             yield return null;

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public static class Utils 
 {
@@ -96,5 +97,21 @@ public static class Utils
         Vector2 p2 = QuadraticCurve(b, c, d, t);
 
         return Lerp(p1, p2, t);
+    }
+
+    public static bool IsAnyInputDown()
+    {
+        // 키보드 키 입력
+        if (Keyboard.current != null &&
+            Keyboard.current.anyKey.wasPressedThisFrame) return true;
+        // 마우스 왼쪽 버튼 입력
+        if (Mouse.current != null &&
+            Mouse.current.leftButton.wasPressedThisFrame) return true;
+
+        // 모바일 터치
+        if (Touchscreen.current != null &&
+            Touchscreen.current.primaryTouch.press.wasPressedThisFrame) return true;
+
+        return false;
     }
 }

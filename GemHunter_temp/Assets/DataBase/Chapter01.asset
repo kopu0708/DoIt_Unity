@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 365b5590ca25ee348ad8dc275958b5d9, type: 3}
+  m_Name: Chapter01
+  m_EditorClassIdentifier: Assembly-CSharp::ChapterData
+  chapterDatabase:
+    isUnlock: 1
+    bestStage: 1
+  chapterDataTable:
+    spriteChapter: {fileID: 21300000, guid: 5e763aeab7145a0478d0d02625f71d89, type: 3}
+    colorChapter: {r: 1, g: 1, b: 1, a: 1}
+    chapterName: "\uD0D0\uC695\uC758 \uAD11\uC0B0"
+  stageDataTable:
+    maxStage: 20
+    baseEnemyCount: 10
+    baseEnemyLevel: 1
+    enemyPrefabs:
+    - {fileID: 1682498285235524163, guid: ee44a818c9a92d743bcb0cb7f182f85d, type: 3}
